@@ -19,6 +19,6 @@
 * **copy()**= Returns a copy of the list
 * **count()**= Returns the number of elements with a value
 
-* **range(6) =prints numbers from 0-5
-* **range(2,6)=print from 2 to 5
-* **range(2, 30, 3)= print 2 to 29 with gap of 3
+* **range(6)** =prints numbers from 0-5
+* **range(2,6)**=print from 2 to 5
+* **range(2, 30, 3)**= print 2 to 29 with gap of 3
