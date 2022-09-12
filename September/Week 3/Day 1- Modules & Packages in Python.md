@@ -5,13 +5,13 @@
 * Like libraries from c++
 
 
-Syntax of Module: 
+## Syntax of Module: 
 ```python
 from python_file import class of that file
 from Classes import PLanets
 ```
 
-Packages: 
+# Packages: 
 Packages are a collection of modules
 
 To create package new file -> __init__.py file name 
