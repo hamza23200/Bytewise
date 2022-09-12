@@ -50,12 +50,12 @@ print("You got " + str((score / 4) * 100) + "%.")
 # Number Guessing Game
 This game that will show you make a correct guess of number or not. If you make a guess then message will display either you are above the guess or below the guess. And if we enter any alphabet or negative number then message will appear Please enter a number next time.
 
-
-import random
+```python
+import random #random no.
 
 top_of_range = input("Type a number: ")
 
-if top_of_range.isdigit():
+if top_of_range.isdigit(): #to makesure its digit 
     top_of_range = int(top_of_range)
 
     if top_of_range <= 0:
@@ -63,20 +63,20 @@ if top_of_range.isdigit():
         quit()
 
 else:
-    print("Please type a number next time.😞")
+    print("Please type a number next time.")
     quit()
 
-random_number = random.randint(0, top_of_range)
+random_number = random.randint(0, top_of_range)  # if you use int the no. wil be included
 guesses = 0
 
-while True:
+while True: #keep asking
     guesses += 1
     user_guess = input("Make a guess: ")
     if user_guess.isdigit():
         user_guess = int(top_of_range)
     else:
         print("Please type a number next time.😞")
-        continue
+        continue #countinues loop
 
     if user_guess == random_number:
         print("Yeah You Got it! 🥳")
@@ -88,3 +88,4 @@ while True:
             print("You were below the number!")
 
 print("You got it in ", guesses, "guesses")
+```
