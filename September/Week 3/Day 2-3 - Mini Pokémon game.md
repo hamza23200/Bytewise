@@ -20,8 +20,8 @@ class Pokemon:
         result = rps_table[game_map[type1]][game_map[type2]]
         return result_map[result]
     
-    def feed(self):
-        if self.hp < self.max_hp:
+    def feed(self):  # to call do b.feed(), self argument bcz calling class variables
+        if self.hp < self.max_hp: #so that hp doesnt go beyond max
             self.hp += 1
             print(f"{self.name} recovered 1 HP.")
         else:
@@ -40,7 +40,7 @@ class Pokemon:
             other.hp = 0
             print(f"{self.name} won. Congratulations!")
 
-    def __str__(self):
+    def __str__(self):     #to gett ouput in string
         return f"{self.name} ({self.primary_type}): {self.hp}/{self.max_hp}"
 
 
