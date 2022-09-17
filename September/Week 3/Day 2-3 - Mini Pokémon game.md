@@ -45,9 +45,9 @@ class Pokemon:
 
 
 if __name__ == "__main__":
-    a = Pokemon('bulbasaur', 'grass', 100)
+    a = Pokemon('bulbasaur', 'water', 100)
     b = Pokemon('charmander', 'fire', 150)
-    a.battle(b) # w vs f =lose
+    a.battle(b) # a wins , w vs f=1
     
     
     
