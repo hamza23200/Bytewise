@@ -1,4 +1,9 @@
 ```python
+
+board = [ "-","-","-",
+          "-","-","-",
+          "-","-","-"]
+
 winner = None
 current_player = 'X'
 game_still_going = True
