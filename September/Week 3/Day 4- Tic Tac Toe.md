@@ -1,118 +1,109 @@
 ```python
-
-board = [ "-","-","-",
-          "-","-","-",
-          "-","-","-"]
-
-winner = None
-current_player = 'X'
-game_still_going = True
-
+#board
+board=["-","-","-",
+       "-","-","-",
+       "-","-","-",]
+game_still_going=True   
+winner=None
+current_player="X"
+#display board
 def display_board():
-    print(board[0]+ "|" + board[1] + "|"+ board[2])
-    print(board[3]+ "|" + board[4] + "|"+ board[5])
-    print(board[6]+ "|" + board[7] + "|"+ board[8])
-
+    print(board[0]+" | "+ board[1]+" | "+board[2])
+    print(board[3]+" | "+ board[4]+" | "+board[5])
+    print(board[6]+" | "+ board[7]+" | "+board[8])
+# play games
 def play_game():
     display_board()
-
     while game_still_going:
-
         handle_turn(current_player)
-        check_if_gameover()
+        check_if_game_over()
         flip_player()
-
-    if winner == 'X' or winner == "0":
-        print(winner + " won the match")
-    elif winner == None:
+    if winner=='X' or winner=='0':
+        print(winner+" won!")
+    elif winner==None:
         print("Tie")
-
 def handle_turn(player):
-    print(player + "'s turn")
-    position = input("Throw your move from 1-9 ")
-    valid = False
+    print(player +"'s turn.")
+    position=input("Choose a position from 1-9: ")
+    valid=False
     while not valid:
-        while position not in ["1","2","3","4","5","6","7","8","9"]:
-            position = input("please choose your position between 1-9 : ")
-        position = int(position) - 1
-
-        if board[position] == "-":
-            valid = True
-        else:
-            print("You can't go there man!! it's already filled")
-    board[position] = player
-
+        
+     while position not in ["1","2","3","4","5","6","7","8","9"]:
+         position=input("Choose a position from 1-9: ")
+         
+     position=int(position)-1
+     if board[position]=='-':
+         valid=True
+     else:    
+        print("you cant go there. GO AGAIN")
+    board[position]=player
     display_board()
-
-def check_if_gameover():
-    check_if_win()
+def check_if_game_over():
+    check_for_winer()
     check_if_tie()
-def check_if_win():
+def  check_for_winer():
     global winner
-    row_win = check_rows()
-    column_win = check_columns()
-    diagnol_win = check_diagnols()
-    if row_win:
-        winner = row_win
-    elif column_win:
-        winner = column_win
-    elif diagnol_win:
-        winner = diagnol_win
-
+    row_winner=check_rows()
+    column_winner=check_columns()
+    diagonal_winner=check_diagonals()
+    if row_winner:
+        winner=row_winner
+    elif column_winner:
+        winner=column_winner
+    elif diagonal_winner:
+        winner=diagonal_winner
+    else:
+        winner=None
+    return
 def check_rows():
     global game_still_going
-    row_1 = board[0] == board[1] == board[2] != "-"
-    row_2 = board[3] == board[4] == board[5] != "-"
-    row_3 = board[6] == board[7] == board[8] != "-"
+    row_1=board[0]==board[1]==board[2]!="-"
+    row_2=board[3]==board[4]==board[5]!="-"
+    row_3=board[6]==board[7]==board[8]!="-"
     if row_1 or row_2 or row_3:
-        game_still_going = False
+        game_still_going=False
     if row_1:
         return board[0]
-    if row_2:
+    elif row_2:
         return board[3]
-    if row_3:
-        return board[6]
-    else:
-        return None
+    elif row_3:
+        return board[6] 
+    return
 def check_columns():
     global game_still_going
-    col_1 = board[0] == board[3] == board[6] != "-"
-    col_2 = board[1] == board[4] == board[7] != "-"
-    col_3 = board[2] == board[5] == board[8] != "-"
-    if col_1 or col_2 or col_3:
-        game_still_going = False
-    if col_1:
+    column_1=board[0]==board[3]==board[6]!="-"
+    column_2=board[1]==board[4]==board[7]!="-"
+    column_3=board[2]==board[5]==board[8]!="-"
+    if column_1 or column_2 or column_3:
+        game_still_going=False
+    if column_1:
         return board[0]
-    if col_2:
+    elif column_2:
         return board[1]
-    if col_3:
-        return board[2]
-    else:
-        return None
-def check_diagnols():
+    elif column_3:
+        return board[2] 
+    return
+def check_diagonals():
     global game_still_going
-    diag_1 = board[0] == board[4] == board[8] != "-"
-    diag_2 = board[6] == board[4] == board[2] != "-"
-    if diag_1 or diag_2:
-        game_still_going = False
-    if diag_1:
+    diagonals_1=board[0]==board[4]==board[8]!="-"
+    diagonals_2=board[6]==board[4]==board[2]!="-"
+    if diagonals_1 or diagonals_2:
+        game_still_going=False
+    if diagonals_1:
         return board[0]
-    if diag_2:
+    elif diagonals_2:
         return board[6]
-    else:
-        return None
+    return
 def check_if_tie():
     global game_still_going
     if "-" not in board:
-        game_still_going = False
-        #return True
-    else:
-        return False
+        game_still_going=False
+    return
 def flip_player():
     global current_player
-    if current_player == "X":
-        current_player = "O"
-    elif current_player == "O":
-        current_player = "X"
-play_game()
-```
+    if current_player=='X':
+        current_player='O'
+    elif current_player=='O':
+        current_player='X'    
+    return
+play_game()   
