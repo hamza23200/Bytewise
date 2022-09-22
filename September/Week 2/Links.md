@@ -5,4 +5,5 @@
 * Task 2: Functions
 * Link: https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true
 * OOP in Python : https://www.youtube.com/watch?v=MikphENIrOo
-* 
+* 5 mini proj: https://www.youtube.com/watch?v=DLn3jOsNRVE
+
