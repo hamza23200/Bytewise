@@ -14,4 +14,4 @@ Spider goes into the source code of website, then it searches for h2 tag in insp
 * URL/robots.txt
 * Scarpy follows these rules
 * if you dont want to then go to settsing file and set to false
-
+b
