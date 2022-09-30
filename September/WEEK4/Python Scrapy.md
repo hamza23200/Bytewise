@@ -78,20 +78,21 @@ class Quotes_to_scrape(scrapy.Spider):
         "https://quotes.toscrape.com/"
     ]
     def parse(self, response):
-            all_div_quotes = response.css('div.quote')
-            for quota in all_div_quotes:
-                title = quota.css('span.text::text').extract()
-                author = quota.css('.author::text').extract()
+            all_div_quotes = response.css('div.quote') #getting data 
+            for quota in all_div_quotes: #looop  helps organise data
+                title = quota.css('span.text::text').extract() #extract txt
+                author = quota.css('.author::text').extract() 
                 tag = quota.css(".tag::text").extract()
 
-                yield {
+                yield {  #yield is  same as returrn statment
                     'title' : title,
                     'author' : author,
                     'tag' : tag
                 }
 ```
 # Ithem Container
-Items are containers used to store data. We can put extracted data directly into our databases but there are some problems. These are temporary locations.
+* Items are containers used to store data. We can put extracted data directly into our databases but there are some problems
+* These are temporary locations(items)
 
 ### quotes_spider.py:
 ```python
