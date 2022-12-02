@@ -215,13 +215,13 @@ df=gs.get_jobs('data scientist',15,false,path,15)
 
 After everything is done upload to github by:
 
-cd document/
-ds_proj
-echo "# ds_proj" >> README.md
-git add .
-git commit -m "uploaded scraper and run code" 
-git remote add origin https://github.com/hamza23200/Data-Science.git #createnew repo
-
+* cd document/
+* ds_proj
+* echo "# ds_proj" >> README.md
+* git add .
+* git commit -m "uploaded scraper and run code" 
+* git remote add origin https://github.com/hamza23200/Data-Science.git #createnew repo
+* git push
 
 
 
