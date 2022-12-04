@@ -4,7 +4,7 @@ Try doing project related to your field of intrest
 Using *Spyder IDE* 
 Using *Giyt Hub Bash*
 
-# SALARYY PREDICTION PROJECT
+# SALARY PREDICTION PROJECT
 Jobs see:
 * Glass Door 
 * Linkedin
@@ -12,6 +12,8 @@ Jobs see:
 Glass Door scrapper SELENIUM
 
 https://github.com/arapfaik/scraping-glassdoor-selenium
+
+# Glassdoor Scrapper
 ```python
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from selenium import webdriver
